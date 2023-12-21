@@ -103,7 +103,7 @@ ${SUDO} apt-get -y update &>>$FICHIER_DE_LOG && toutEstOK || erreurOnSort
 ${SUDO} apt-get -y install mysql-community-server &>>$FICHIER_DE_LOG && toutEstOK || erreurOnSort
 
 # Installation des services Apache, PHP, Git, OpenSSH-Server et Fail2Ban
-suiviInstallation "Installation des services Apache, PHP et Git"
+suiviInstallation "Installation des services Apache, PHP, Git, OpenSSH-Server et Fail2Ban"
 ${SUDO} apt-get -y install apache2 php8.2 libapache2-mod-php8.2 php8.2-mysql git openssh-server fail2ban &>>$FICHIER_DE_LOG && toutEstOK || erreurOnSort
 
 # Fin
