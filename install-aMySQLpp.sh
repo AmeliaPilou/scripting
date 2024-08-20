@@ -7,7 +7,7 @@
 ##            serveur LAMP (Apache, MySQL, PHP et phpMyAdmin) avec les       ##
 ##            dernières versions.                                            ##
 ##                                                                           ##
-## Date : 19/12/2023 (v2)                                                    ##
+## Date : 20/08/2024 (v3)                                                    ##
 ##                                                                           ##
 ## Scénario :                                                                ##
 ##                                                                           ##
@@ -15,6 +15,10 @@
 ##   - Passage en MySQL 8.2                                                  ##
 ##   - Passage en PHP 8.2                                                    ##
 ##                                                                           ##
+## Changements v3 :                                                          ##
+##   - Passage en MySQL 8.4                                                  ##
+##   - Passage en PHP 8.3                                                    ##
+##                                                                           ##                                                                           ##
 ##      1. Mise à jour des paquets et du système si besoin                   ##
 ##      2. Installation de MySQL                                             ##
 ##      3. Installation de Apache, PHP, Git, OpenSSH-Server et Fail2Ban      ##
@@ -94,7 +98,7 @@ ${SUDO} apt-get -y update &>>$FICHIER_DE_LOG && toutEstOK || erreurOnSort
 
 # Installation de MySQL Server
 suiviInstallation "Installation de MySQL Server (7 opérations)"
-${SUDO} debconf-set-selections <<< "mysql-apt-config mysql-apt-config/select-server select mysql-8.2" &>>$FICHIER_DE_LOG && toutEstOK || erreurOnSort
+${SUDO} debconf-set-selections <<< "mysql-apt-config mysql-apt-config/select-server select mysql-8.4" &>>$FICHIER_DE_LOG && toutEstOK || erreurOnSort
 ${SUDO} debconf-set-selections <<< "mysql-community-server mysql-community-server/root-pass password ${MOT_DE_PASSE_ADMIN_MYSQL}" &>>$FICHIER_DE_LOG && toutEstOK || erreurOnSort
 ${SUDO} debconf-set-selections <<< "mysql-community-server mysql-community-server/re-root-pass password ${MOT_DE_PASSE_ADMIN_MYSQL}" &>>$FICHIER_DE_LOG && toutEstOK || erreurOnSort
 ${SUDO} debconf-set-selections <<< "mysql-community-server mysql-server/default-auth-override select Use Strong Password Encryption (RECOMMENDED)" &>>$FICHIER_DE_LOG && toutEstOK || erreurOnSort
@@ -104,7 +108,7 @@ ${SUDO} apt-get -y install mysql-community-server &>>$FICHIER_DE_LOG && toutEstO
 
 # Installation des services Apache, PHP, Git, OpenSSH-Server et Fail2Ban
 suiviInstallation "Installation des services Apache, PHP, Git, OpenSSH-Server et Fail2Ban"
-${SUDO} apt-get -y install apache2 php8.2 libapache2-mod-php8.2 php8.2-mysql git openssh-server fail2ban &>>$FICHIER_DE_LOG && toutEstOK || erreurOnSort
+${SUDO} apt-get -y install apache2 php8.3 libapache2-mod-php8.3 php8.3-mysql git openssh-server fail2ban &>>$FICHIER_DE_LOG && toutEstOK || erreurOnSort
 
 # Fin
 suiviInstallation "Le serveur est prêt !" && exit 0
