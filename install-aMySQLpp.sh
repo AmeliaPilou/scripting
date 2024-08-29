@@ -18,9 +18,6 @@
 ##   - Passage en MySQL 8.2                                                  ##
 ##   - Passage en PHP 8.2                                                    ##
 ##                                                                           ##
-## Changements v3 :                                                          ##
-##   - Passage en MySQL 8.4                                                  ##
-##   - Passage en PHP 8.3                                                    ##
 ##                                                                           ##                                                                           ##
 ##      1. Mise à jour des paquets et du système si besoin                   ##
 ##      2. Installation de MySQL                                             ##
