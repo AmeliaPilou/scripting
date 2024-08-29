@@ -18,7 +18,6 @@
 ##   - Passage en MySQL 8.2                                                  ##
 ##   - Passage en PHP 8.2                                                    ##
 ##                                                                           ##
-##                                                                           ##                                                                           ##
 ##      1. Mise à jour des paquets et du système si besoin                   ##
 ##      2. Installation de MySQL                                             ##
 ##      3. Installation de Apache, PHP, Git, OpenSSH-Server et Fail2Ban      ##
